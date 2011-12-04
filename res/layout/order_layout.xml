@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:minWidth="280dip"
+  android:fadingEdge="none"
+  >
+	<LinearLayout
+	  android:background="@color/normal"
+	  android:orientation="vertical"
+	  android:layout_width="fill_parent"
+	  android:layout_height="fill_parent">
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="상품명"
+			android:textStyle="bold"
+			android:textSize="16dip"
+			android:background="@color/select"
+			android:textColor="@color/normal"
+			android:paddingLeft="5dp"
+							
+		 />
+		<LinearLayout
+			android:background="#5a9af7"
+		 	android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:padding="1dp"
+		  	android:layout_height="1dp" /> 		 
+			 
+		<EditText
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/product"
+			android:hint="상품명.."
+			android:textColor="#111111"
+			android:padding="10dp"
+			android:shadowDx="1"
+			android:shadowDy="1"
+			android:shadowRadius="1"
+			android:shadowColor="#ffffff"
+			android:text=""						
+		/>
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="수량"
+			android:textStyle="bold"
+			android:textSize="16dip"
+			android:background="@color/select"
+			android:textColor="@color/normal"
+			android:paddingLeft="5dp"
+							
+		 />
+		<LinearLayout
+			android:background="#5a9af7"
+		 	android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:padding="1dp"
+		  	android:layout_height="1dp" /> 		 
+			 
+		<EditText
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/stock"
+			android:hint="수량.."
+			android:textColor="#111111"
+			android:padding="10dp"
+			android:shadowDx="1"
+			android:shadowDy="1"
+			android:inputType="number"
+			android:maxLength="4"
+			android:shadowRadius="1"
+			android:shadowColor="#ffffff"
+			android:text=""						
+		/>		
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="가격"
+			android:textSize="16dip"
+			android:background="@color/select"
+			android:textColor="@color/normal"	
+			android:paddingLeft="5dp"
+									
+		 />
+		<LinearLayout
+			android:background="#5a9af7"
+		 	android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:padding="1dp"
+		  	android:layout_height="1dp" /> 			 
+		<EditText
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/price"
+			android:hint=" 가격.."
+			android:textColor="#111111"
+			android:padding="10dp"
+			android:inputType="number"
+			android:shadowDx="1"
+			android:shadowDy="1"
+			android:maxLength="7"
+			android:shadowRadius="1"
+			android:shadowColor="#ffffff"
+			android:text=""				
+		 />
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="상품정보"
+			android:textSize="16dip"
+			android:background="@color/select"
+			android:textColor="@color/normal"	
+			android:paddingLeft="5dp"
+
+		 />
+		<LinearLayout
+			android:background="#5a9af7"
+		 	android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:padding="dp"
+		  	android:layout_height="1dp" /> 			 
+		<EditText
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/info"
+			android:lines="5"
+			android:hint="상품 정보.."
+			android:textColor="#111111"
+			android:padding="10dp"
+			android:shadowDx="1"
+			android:shadowDy="1"
+			android:shadowRadius="1"
+			android:shadowColor="#ffffff"
+			android:text=""				
+		 />
+
+		<Button
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/add_btn"
+			android:textColor="#111111"
+			android:padding="10dp"
+			android:shadowDx="1"
+			android:shadowDy="1"
+			android:shadowRadius="1"
+			android:shadowColor="#ffffff"
+			android:text="등록하기"	
+			android:onClick="mOnclick"
+	
+		 />		 
+	</LinearLayout>
+	 
+</ScrollView>
