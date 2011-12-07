@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
   xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="fill_parent"
+  android:layout_width="100dp"
   android:layout_height="fill_parent"
   android:minWidth="280dip"
+  android:layout_marginLeft="30dp"
   android:fadingEdge="none"
-  android:background="@color/normal"
   >
 	<LinearLayout
 	  android:background="@color/normal"
 	  android:orientation="vertical"
 	  android:layout_width="fill_parent"
 	  android:layout_height="fill_parent">
+ 
 		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="주문 테이블"
+			android:text="시행처"
 			android:textStyle="bold"
 			android:textSize="16dip"
 			android:background="@color/select"
@@ -30,66 +31,50 @@
 			android:padding="1dp"
 		  	android:layout_height="1dp" /> 		 
 			 
-		<EditText
+		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/product"
-			android:hint="상품명.."
+			android:id="@+id/agency"
 			android:textColor="#111111"
 			android:padding="10dp"
 			android:shadowDx="1"
 			android:shadowDy="1"
 			android:shadowRadius="1"
 			android:shadowColor="#ffffff"
-			android:text=""						
+			android:text="wefawefawefawefawefawgq23hh23h23h23h23hq34hq23h요"						
 		/>
 		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="인원"
-			android:textStyle="bold"
+			android:text="자격증소개"
 			android:textSize="16dip"
 			android:background="@color/select"
-			android:textColor="@color/normal"
+			android:textColor="@color/normal"	
 			android:paddingLeft="5dp"
-							
+									
 		 />
 		<LinearLayout
 			android:background="#5a9af7"
 		 	android:orientation="vertical"
 			android:layout_width="fill_parent"
 			android:padding="1dp"
-		  	android:layout_height="1dp" /> 		 
-			 
-		<EditText
+		  	android:layout_height="1dp" /> 			 
+		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/person"
-			android:hint="인원.."
+			android:id="@+id/info"
 			android:textColor="#111111"
 			android:padding="10dp"
 			android:shadowDx="1"
 			android:shadowDy="1"
-			android:inputType="number"
-			android:maxLength="4"
 			android:shadowRadius="1"
 			android:shadowColor="#ffffff"
-			android:text=""						
-		/>		
-		<TextView
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:text="가격 : "
-			android:textSize="18dip"
-			android:background="@color/select"
-			android:textColor="@color/normal"	
-			android:padding="15dp"
-									
+			android:text=""				
 		 />
 		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="주문사항"
+			android:text="시험일정"
 			android:textSize="16dip"
 			android:background="@color/select"
 			android:textColor="@color/normal"	
@@ -102,13 +87,10 @@
 			android:layout_width="fill_parent"
 			android:padding="dp"
 		  	android:layout_height="1dp" /> 			 
-		<EditText
+		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/needs"
-			android:lines="5"
-			android:hint="주문사항.."
-			android:gravity="top"
+			android:id="@+id/test"
 			android:textColor="#111111"
 			android:padding="10dp"
 			android:shadowDx="1"
@@ -117,20 +99,35 @@
 			android:shadowColor="#ffffff"
 			android:text=""				
 		 />
+		 		 		 	 
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="홈페이지"
+			android:textSize="16dip"
+			android:background="@color/select"
+			android:textColor="@color/normal"	
+			android:paddingLeft="5dp"
 
+		 />
+		<LinearLayout
+			android:background="#5a9af7"
+		 	android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:padding="1dp"
+		  	android:layout_height="1dp" /> 			 
 		<Button
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/add_btn"
+			android:id="@+id/url"
 			android:textColor="#111111"
 			android:padding="10dp"
 			android:shadowDx="1"
 			android:shadowDy="1"
 			android:shadowRadius="1"
 			android:shadowColor="#ffffff"
-			android:text="주문하기"	
-			android:onClick="mOnclick"
-	
+			android:text=""	
+			android:background="#ffffffff"			
 		 />		 
 	</LinearLayout>
 	 

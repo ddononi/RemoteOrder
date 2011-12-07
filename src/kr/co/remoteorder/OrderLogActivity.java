@@ -1,5 +1,5 @@
 package kr.co.remoteorder;
 
-public class OrderLogActivity {
+public class OrderLogActivity extends BaseActivity {
 
 }

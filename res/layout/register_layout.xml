@@ -15,7 +15,7 @@
 		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="주문 테이블"
+			android:text="상품명"
 			android:textStyle="bold"
 			android:textSize="16dip"
 			android:background="@color/select"
@@ -46,7 +46,7 @@
 		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="인원"
+			android:text="수량"
 			android:textStyle="bold"
 			android:textSize="16dip"
 			android:background="@color/select"
@@ -64,8 +64,8 @@
 		<EditText
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/person"
-			android:hint="인원.."
+			android:id="@+id/stock"
+			android:hint="수량.."
 			android:textColor="#111111"
 			android:padding="10dp"
 			android:shadowDx="1"
@@ -79,17 +79,38 @@
 		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="가격 : "
-			android:textSize="18dip"
+			android:text="가격"
+			android:textSize="16dip"
 			android:background="@color/select"
 			android:textColor="@color/normal"	
-			android:padding="15dp"
+			android:paddingLeft="5dp"
 									
+		 />
+		<LinearLayout
+			android:background="#5a9af7"
+		 	android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:padding="1dp"
+		  	android:layout_height="1dp" /> 			 
+		<EditText
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/price"
+			android:hint=" 가격.."
+			android:textColor="#111111"
+			android:padding="10dp"
+			android:inputType="number"
+			android:shadowDx="1"
+			android:shadowDy="1"
+			android:maxLength="7"
+			android:shadowRadius="1"
+			android:shadowColor="#ffffff"
+			android:text=""				
 		 />
 		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="주문사항"
+			android:text="상품정보"
 			android:textSize="16dip"
 			android:background="@color/select"
 			android:textColor="@color/normal"	
@@ -105,9 +126,9 @@
 		<EditText
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/needs"
+			android:id="@+id/info"
 			android:lines="5"
-			android:hint="주문사항.."
+			android:hint="상품 정보.."
 			android:gravity="top"
 			android:textColor="#111111"
 			android:padding="10dp"
@@ -128,7 +149,7 @@
 			android:shadowDy="1"
 			android:shadowRadius="1"
 			android:shadowColor="#ffffff"
-			android:text="주문하기"	
+			android:text="등록하기"	
 			android:onClick="mOnclick"
 	
 		 />		 

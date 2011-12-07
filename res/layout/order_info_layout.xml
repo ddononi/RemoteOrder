@@ -30,11 +30,10 @@
 			android:padding="1dp"
 		  	android:layout_height="1dp" /> 		 
 			 
-		<EditText
+		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:id="@+id/product"
-			android:hint="상품명.."
 			android:textColor="#111111"
 			android:padding="10dp"
 			android:shadowDx="1"
@@ -61,16 +60,14 @@
 			android:padding="1dp"
 		  	android:layout_height="1dp" /> 		 
 			 
-		<EditText
+		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:id="@+id/person"
-			android:hint="인원.."
 			android:textColor="#111111"
 			android:padding="10dp"
 			android:shadowDx="1"
 			android:shadowDy="1"
-			android:inputType="number"
 			android:maxLength="4"
 			android:shadowRadius="1"
 			android:shadowColor="#ffffff"
@@ -102,12 +99,10 @@
 			android:layout_width="fill_parent"
 			android:padding="dp"
 		  	android:layout_height="1dp" /> 			 
-		<EditText
+		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:id="@+id/needs"
-			android:lines="5"
-			android:hint="주문사항.."
 			android:gravity="top"
 			android:textColor="#111111"
 			android:padding="10dp"
@@ -121,14 +116,14 @@
 		<Button
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/add_btn"
+			android:id="@+id/check_out_btn"
 			android:textColor="#111111"
 			android:padding="10dp"
 			android:shadowDx="1"
 			android:shadowDy="1"
 			android:shadowRadius="1"
 			android:shadowColor="#ffffff"
-			android:text="주문하기"	
+			android:text="체크아웃"	
 			android:onClick="mOnclick"
 	
 		 />		 

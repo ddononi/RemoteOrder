@@ -24,6 +24,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Adapter;
@@ -38,6 +39,7 @@ import android.widget.AdapterView.OnItemClickListener;
  *	 상품 등록후 서버에 전송하는 클래스
  */
 public class OrderActivity extends BaseActivity {
+	private int tableNum;	//  테이블 번호
 	private ProgressDialog progressDialog;	// 로딩 다이얼로그
 
 	
@@ -46,43 +48,42 @@ public class OrderActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order_layout);
-        
+        Intent intent = getIntent();
+        // 테이블 번호 가져오기
+        tableNum = intent.getIntExtra("tableNum", 0);
+        if(tableNum == 0){	//  테이블번호가 없으면
+        	finish();
+        }
 	}
 
 	/** 추가 버튼 클릭 */
 	public void mOnclick(View v){
 		if(v.getId() == R.id.add_btn){
-			addProduct();
+			doOrder();
 		}
 	}
 
 	/**
-	 * 상품 추가하기
+	 * 주문하기
 	 */
-	private void addProduct() {
+	private void doOrder() {
 
 		final String product = ((EditText)findViewById(R.id.product)).getText().toString();
-		final String stock = ((EditText)findViewById(R.id.stock)).getText().toString();
-		final String info = ((EditText)findViewById(R.id.info)).getText().toString();
-		final String price = ((EditText)findViewById(R.id.price)).getText().toString();
+		final String person = ((EditText)findViewById(R.id.person)).getText().toString();
+		final String needs = ((EditText)findViewById(R.id.needs)).getText().toString();
 
 		if(TextUtils.isEmpty(product)){
 			Toast.makeText(this, "상품명을 입력하세요", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		
-		if(!TextUtils.isDigitsOnly(stock)){
-			Toast.makeText(this, "수량을 정확히 입력하세요", Toast.LENGTH_SHORT).show();
+		if(!TextUtils.isDigitsOnly(person)){
+			Toast.makeText(this, "인원을 정확히 입력하세요", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		
-		if(!TextUtils.isDigitsOnly(price)){
+		if(!TextUtils.isDigitsOnly(needs)){
 			Toast.makeText(this, "가격을 정확히 입력하세요", Toast.LENGTH_SHORT).show();
-			return;
-		}
-		
-		if(TextUtils.isEmpty(info)){
-			Toast.makeText(this, "상품정보를 정확히 입력하세요", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		
@@ -100,11 +101,11 @@ public class OrderActivity extends BaseActivity {
 				// 이름과 값을 저장할 vector
 				Vector<NameValuePair> vars = new Vector<NameValuePair>();
 				try {
-					// 상품정보들을 넣는다.
+					// 주문정보들을 넣는다.
 					vars.add(new BasicNameValuePair("product", product));
-					vars.add(new BasicNameValuePair("stock", stock));
-					vars.add(new BasicNameValuePair("info", info));
-					vars.add(new BasicNameValuePair("price", price));
+					vars.add(new BasicNameValuePair("person", person));
+					vars.add(new BasicNameValuePair("needs", needs));
+					vars.add(new BasicNameValuePair("price", "10000"));
 					// 한글깨짐을 방지하기 위해 utf-8 로 인코딩시키자
 					UrlEncodedFormEntity entity = null;
 					entity = new UrlEncodedFormEntity(vars, HTTP.UTF_8);	//utf-8 인코딩
@@ -117,16 +118,25 @@ public class OrderActivity extends BaseActivity {
 					// ok면 정상처리
 					if (!TextUtils.isEmpty(responseBody)
 							&& !responseBody.equals(BaseActivity.ERROR_MESSAGE)) {
+						
+						// 주문 상태 db 변경
+						changeState(Integer.valueOf(person), tableNum);
+						// 정상처리결과 메세지를 설정
+						setResult(RESULT_OK);
 						Log.i(DEBUG_TAG, responseBody);
 						OrderActivity.this.runOnUiThread(new Runnable() {
 							@Override
 							public void run() {
 								// TODO Auto-generated method stub
 								Toast.makeText(OrderActivity.this,
-										"정상 등록되었습니다.", Toast.LENGTH_SHORT).show();
+										"정상주문처리되었습니다.", Toast.LENGTH_SHORT).show();
 							}
 						});
+					}else{
+						// 정상 응답이 아니면 
+						setResult(RESULT_CANCELED);
 					}
+					finish();	// 액티비티 종료
 					Log.i(DEBUG_TAG, responseBody);
 				} catch (ClientProtocolException e) {
 					Log.e(DEBUG_TAG, "Failed to register id (protocol): ", e);
@@ -144,5 +154,29 @@ public class OrderActivity extends BaseActivity {
 		}).start();		
 		
 	}
+
+	private void changeState(int person, int tableNum) {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		DBHelper dbhp =  new DBHelper(this);
+		SQLiteDatabase db = dbhp.getWritableDatabase();	// 읽기모도로 해주자
+		ContentValues cv = new ContentValues();
+		
+		cv.put("state", "a");
+		cv.put("person", person);
+		db.update(DBHelper.ORDER_STATE_TABLE, cv, "table_num = ?", new String[]{String.valueOf(tableNum), });
+	
+    	// 디비는 꼭 닫아준다.
+		db.close();
+		dbhp.close();  
+	}
+
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+	}
+	
+	
 
 }
