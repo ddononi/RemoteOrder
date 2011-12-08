@@ -16,23 +16,29 @@ public final class R {
         public static final int select=0x7f040000;
     }
     public static final class drawable {
-        public static final int boarder=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int selector=0x7f020002;
+        public static final int bg=0x7f020000;
+        public static final int blue_btn=0x7f020001;
+        public static final int boarder=0x7f020002;
+        public static final int gray_btn=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int selector=0x7f020005;
     }
     public static final class id {
-        public static final int add_btn=0x7f060014;
+        public static final int add_btn=0x7f060017;
         public static final int agency=0x7f060000;
-        public static final int check_out_btn=0x7f060013;
+        public static final int check_out_btn=0x7f060016;
         public static final int info=0x7f060001;
         public static final int item=0x7f060004;
-        public static final int list=0x7f060015;
-        public static final int needs=0x7f060012;
-        public static final int person=0x7f060011;
-        public static final int price=0x7f060017;
-        public static final int product=0x7f060010;
-        public static final int stock=0x7f060016;
+        public static final int list=0x7f060018;
+        public static final int needs=0x7f060015;
+        public static final int person=0x7f060014;
+        public static final int price=0x7f06001a;
+        public static final int product=0x7f060013;
+        public static final int stock=0x7f060019;
         public static final int table1=0x7f060007;
+        public static final int table10=0x7f060010;
+        public static final int table11=0x7f060011;
+        public static final int table12=0x7f060012;
         public static final int table2=0x7f060008;
         public static final int table3=0x7f060009;
         public static final int table4=0x7f06000a;

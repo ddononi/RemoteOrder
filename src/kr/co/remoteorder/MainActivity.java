@@ -17,7 +17,8 @@ public class MainActivity extends BaseActivity {
 	private int[] buttonId = {
 			R.id.table1, R.id.table2, R.id.table3,
 			R.id.table4, R.id.table5, R.id.table6,
-			R.id.table7, R.id.table8, R.id.table9
+			R.id.table7, R.id.table8, R.id.table9,
+			R.id.table10, R.id.table11, R.id.table12
 	};
 	private Button[] btn = new Button[buttonId.length];
 	
@@ -113,7 +114,16 @@ public class MainActivity extends BaseActivity {
 			break;			
 		case R.id.table9 :
 			tableNum = 9;
-			break;			
+			break;	
+		case R.id.table10 :
+			tableNum = 10;
+			break;	
+		case R.id.table11 :
+			tableNum = 11;
+			break;	
+		case R.id.table12 :
+			tableNum = 12;
+			break;				
 		}
 		// 자리가 있는지 체크
 		String text = btn[tableNum-1].getText().toString();

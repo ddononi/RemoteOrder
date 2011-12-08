@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bg"
     android:layout_height="match_parent" >
 
     <TextView
@@ -28,10 +29,11 @@
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:padding="10dp"
-                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:layout_margin="1dp"
                     android:id="@+id/table1"
                     android:textSize="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/selector"
                     android:onClick="mOnclick"
                     android:text="테이블1" />
@@ -40,22 +42,24 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_span="1"
-                    android:padding="10dp"
-                     android:id="@+id/table2"
-                    android:layout_margin="3dp"
-                     android:textSize="10dp"
-                    android:background="@drawable/selector"
+                    android:padding="5dp"
+                    android:id="@+id/table2"
+                    android:layout_margin="1dp"
+                    android:textSize="10dp"
+                    android:layout_weight="1"
+                     android:background="@drawable/selector"
                     android:onClick="mOnclick"
                     android:text="테이블2" />
 
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:padding="10dp"
-                    android:layout_margin="3dp"
-                     android:id="@+id/table3"
-                      android:textSize="10dp"
-                    android:background="@drawable/selector"
+                    android:padding="5dp"
+                    android:layout_margin="1dp"
+                    android:id="@+id/table3"
+                    android:textSize="10dp"
+                    android:layout_weight="1"
+                     android:background="@drawable/selector"
                     android:onClick="mOnclick"
                     android:text="테이블3" />
             </TableRow>
@@ -71,33 +75,36 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:onClick="mOnclick"
-                    android:background="@drawable/selector"
-                    android:padding="10dp"
-                     android:textSize="10dp"
-                     android:id="@+id/table4"
-                    android:layout_margin="3dp"
+                      android:background="@drawable/selector"
+                    android:padding="5dp"
+                    android:textSize="10dp"
+                    android:id="@+id/table4"
+                    android:layout_weight="1"
+                    android:layout_margin="1dp"
                     android:text="테이블4" />
 
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:onClick="mOnclick"
-                    android:background="@drawable/selector"
-                    android:padding="10dp"
-                     android:textSize="10dp"
+                     android:background="@drawable/selector"
+                    android:padding="5dp"
+                    android:textSize="10dp"
                     android:id="@+id/table5"
-                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:layout_margin="1dp"
                     android:text="테이블5" />
 
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:padding="10dp"
+                    android:padding="5dp"
                     android:onClick="mOnclick"
-                    android:layout_margin="3dp"
-                     android:textSize="10dp"
+                    android:layout_margin="1dp"
+                    android:textSize="10dp"
                     android:id="@+id/table6"
-                    android:background="@drawable/selector"
+                    android:layout_weight="1"
+                     android:background="@drawable/selector"
                     android:text="테이블6" />
             </TableRow>
 
@@ -111,35 +118,81 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:onClick="mOnclick"
-                    android:padding="10dp"
-                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:layout_margin="1dp"
                     android:id="@+id/table7"
                      android:textSize="10dp"
-                    android:background="@drawable/selector"
+                     android:layout_weight="1"
+                     android:background="@drawable/selector"
                     android:text="테이블7" />
 
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:onClick="mOnclick"
-                    android:padding="10dp"
+                    android:padding="5dp"
                     android:id="@+id/table8"
-                    android:layout_margin="3dp"
+                    android:layout_margin="1dp"
                      android:textSize="10dp"
+                     android:layout_weight="1"
                     android:background="@drawable/selector"
                     android:text="테이블8" />
 
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:padding="10dp"
-                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:layout_margin="1dp"
                     android:id="@+id/table9"
                      android:textSize="10dp"
+                     android:layout_weight="1"
                     android:background="@drawable/selector"
                     android:onClick="mOnclick"
                     android:text="테이블9" />
             </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:onClick="mOnclick"
+                    android:padding="5dp"
+                    android:layout_margin="1dp"
+                    android:id="@+id/table10"
+                     android:textSize="10dp"
+                     android:layout_weight="1"
+                     android:background="@drawable/selector"
+                    android:text="테이블7" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:onClick="mOnclick"
+                    android:padding="5dp"
+                    android:id="@+id/table11"
+                    android:layout_margin="1dp"
+                     android:textSize="10dp"
+                     android:layout_weight="1"
+                    android:background="@drawable/selector"
+                    android:text="테이블8" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="5dp"
+                    android:layout_margin="1dp"
+                    android:id="@+id/table12"
+                    android:textSize="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector"
+                    android:onClick="mOnclick"
+                    android:text="테이블9" />
+            </TableRow>            
         </TableLayout>
 <TextView
     android:text="주문현황"

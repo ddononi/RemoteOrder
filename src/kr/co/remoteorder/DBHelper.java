@@ -52,6 +52,18 @@ public class DBHelper extends SQLiteOpenHelper {
 				" values (9, 'd', 0 )";		
 		db.execSQL(sql);
 		
+		sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
+				" values (10, 'd', 0 )";		
+		db.execSQL(sql);
+		
+		sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
+				" values (11, 'd', 0 )";		
+		db.execSQL(sql);
+		
+		sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
+				" values (12, 'd', 0 )";		
+		db.execSQL(sql);		
+		
 		//	주문내역 테이블
 		sql = "CREATE TABLE "+ ORDER_TABLE + " (table_num INTEGER, " +
 			     " product TEXT NOT NULL, person INTEGER);";
