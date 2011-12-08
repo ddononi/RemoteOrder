@@ -15,10 +15,14 @@ import android.widget.Toast;
  */
 public class BaseActivity extends Activity {
     /* Server setting */
-    public static final String SERVER_URL = "http://ddononi.cafe24.com/remoteOrder/";			// 기본 url
-    public static final String ORDER_URL = SERVER_URL + "order.php";	// 메시지 url
+	// 웹서버에서 db처리를 위한 url들
+    public static final String SERVER_URL = "http://ddononi.cafe24.com/remoteOrder/";	
+    public static final String ORDER_URL = SERVER_URL + "order.php";					
     public static final String REGISTER_URL = SERVER_URL + "register.php";	
+    public static final String MENU_URL = SERVER_URL + "_menu.php";	
 	public static final String CLEAN_URL = SERVER_URL + "clean.php";	
+	
+	// 서버 응답 메세지
 	public static final String ERROR_MESSAGE = "error";								// 에러 메세지
 	public static final String SUCCESS_MESSAGE = "ok";								// 결과처리 성공
 	public static final int TIMEOUT = 6000;											// 커낵션 타임아웃 시
@@ -28,6 +32,9 @@ public class BaseActivity extends Activity {
 	public static final String APP_NAME = "";	// 앱 이름
 	public final static int DB_VER = 1;			// 디비 버젼
 	public static final String SHARED = "mychat";
+	
+	// 메뉴를 저장할 xml 파일명
+	public static final String MENU_XML_FILE_NAME = "_menu.xml";
 	
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -49,12 +56,10 @@ public class BaseActivity extends Activity {
 			case 1:
 				intent = new Intent(getBaseContext(), OrderLogActivity.class);
 				startActivity(intent);
-				finish();
 				return true;
     		case 2:
 				intent = new Intent(getBaseContext(), RegisterActivity.class);
 				startActivity(intent);
-				finish();
     			return true;
     	}
     	return false;

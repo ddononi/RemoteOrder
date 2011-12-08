@@ -21,7 +21,6 @@
 			android:background="@color/select"
 			android:textColor="@color/normal"
 			android:paddingLeft="5dp"
-							
 		 />
 		<LinearLayout
 			android:background="#5a9af7"
@@ -29,24 +28,13 @@
 			android:layout_width="fill_parent"
 			android:padding="1dp"
 		  	android:layout_height="1dp" /> 		 
-			 
-		<TextView
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/product"
-			android:textColor="#111111"
-			android:padding="10dp"
-			android:shadowDx="1"
-			android:shadowDy="1"
-			android:shadowRadius="1"
-			android:shadowColor="#ffffff"
-			android:text=""						
-		/>
+        
 		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:text="인원"
 			android:textStyle="bold"
+			android:inputType="number"
 			android:textSize="16dip"
 			android:background="@color/select"
 			android:textColor="@color/normal"
@@ -69,9 +57,10 @@
 			android:shadowDx="1"
 			android:shadowDy="1"
 			android:maxLength="4"
+			android:text="1"
 			android:shadowRadius="1"
 			android:shadowColor="#ffffff"
-			android:text=""						
+				
 		/>		
 		<TextView
 			android:layout_width="fill_parent"
@@ -83,6 +72,21 @@
 			android:padding="15dp"
 									
 		 />
+		<LinearLayout
+			android:background="#5a9af7"
+		 	android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:padding="dp"
+		  	android:layout_height="1dp" />	
+		  		
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text=""
+			android:textSize="18dip"
+			android:padding="15dp"
+									
+		 />		
 		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"

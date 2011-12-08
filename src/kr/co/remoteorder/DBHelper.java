@@ -66,8 +66,14 @@ public class DBHelper extends SQLiteOpenHelper {
 		
 		//	주문내역 테이블
 		sql = "CREATE TABLE "+ ORDER_TABLE + " (table_num INTEGER, " +
-			     " product TEXT NOT NULL, person INTEGER);";
+			     " product TEXT, total_price INTEGER NOT NULL, needs TEXT,  person INTEGER);";
 		db.execSQL(sql);		
+		for(int i=1; i <=12; i++){
+			sql = "insert into " + ORDER_TABLE + " (table_num, product, total_price, needs, person) " +
+					" values (" + i + ", '', 0, '', 0 )";		
+			db.execSQL(sql);	
+		}
+		
 
 	}
 	

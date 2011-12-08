@@ -45,7 +45,7 @@ public class RegisterActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.order_layout);
+        setContentView(R.layout.register_layout);
         
 	}
 

@@ -5,13 +5,23 @@
     android:background="@drawable/bg"
     android:layout_height="match_parent" >
 
-    <TextView
-        android:text="주문 테이블"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:gravity="center_horizontal|center"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:orientation="vertical"
+	    android:background="#ffffff"
+	    android:gravity="center_horizontal|center"
+	    android:layout_height="wrap_content" >
+	    <ImageView
+	        android:background="@drawable/title"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" />
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:orientation="vertical"
+		    android:background="#C81300"
+		    android:padding="1dp"
+		    android:layout_height="1dp" />	        
+        </LinearLayout>
 
         <TableLayout
             android:layout_weight="1"
@@ -196,7 +206,8 @@
         </TableLayout>
 <TextView
     android:text="주문현황"
-    android:textSize="20dp"
+    android:textSize="10dp"
+    android:gravity="center_horizontal|center"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
 

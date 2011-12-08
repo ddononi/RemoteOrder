@@ -51,7 +51,7 @@ public final class MyDialog extends Dialog implements View.OnClickListener {
 		if (cursor.moveToFirst()) { // cursor에 row가 1개 이상 있으면
 			// 상품명을을 쪼개 배열에 넣어준다.
 			products = cursor.getString(cursor.getColumnIndex("title")).split(",");
-			data.setProducts(products);
+		//	data.setProducts(products);
 			data.setPerson(cursor.getInt(cursor.getColumnIndex("info")));
 			data.setTableNum(cursor.getInt(cursor.getColumnIndex("table_num")));
 		}

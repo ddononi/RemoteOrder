@@ -1,8 +1,17 @@
 package kr.co.remoteorder;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.ContentValues;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.KeyEvent;
@@ -21,7 +30,7 @@ public class MainActivity extends BaseActivity {
 			R.id.table10, R.id.table11, R.id.table12
 	};
 	private Button[] btn = new Button[buttonId.length];
-	
+	private NumberFormat formatter;			//  통화 설정을 위한 포메터
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,6 +43,10 @@ public class MainActivity extends BaseActivity {
 		}
 		
 		loadState();
+		
+        // 통화 설정
+        Locale ko = Locale.KOREA; /* CANADA, CHINA, FRANCE, ENGLISH ...*/
+        formatter = NumberFormat.getCurrencyInstance(ko);
 
 	}
 	
@@ -69,7 +82,14 @@ public class MainActivity extends BaseActivity {
 				j = i + 1;
 				state = cursor.getString( cursor.getColumnIndex("state") );
 				person = cursor.getInt( cursor.getColumnIndex("person") );
-				state = (state.trim().contains("d") )?"비어있음":"자리있음\n 인원 : " + person;
+				if( state.trim().contains("a") ){
+					btn[i].setBackgroundResource(R.drawable.checkin_selector);
+					state = "자리있음\n 인원 : " + person;
+				}else{
+					state = "비어있음";
+					btn[i].setBackgroundResource(R.drawable.selector);
+				}
+
 				btn[i].setText("테이블-" + j + state );
 				i++;
 			}while( cursor.moveToNext() );	// 다음 커서가 있으면 내용을 가져온다.
@@ -128,15 +148,73 @@ public class MainActivity extends BaseActivity {
 		// 자리가 있는지 체크
 		String text = btn[tableNum-1].getText().toString();
 		if( text.contains("자리있음") ){
-			intent = new Intent(MainActivity.this, OrderInfoActivity.class);
-		//	return;
+			orderInfo(tableNum);
+
 		}else{
 			intent = new Intent(MainActivity.this, OrderActivity.class);
+			intent.putExtra("tableNum", tableNum);
+			startActivityForResult(intent, RESULT_CODE);
 		}
-		intent.putExtra("tableNum", tableNum);
-		startActivityForResult(intent, RESULT_CODE);
 	}
 	
+	/**
+	 * 주문 세부 정보 가져오기
+	 * @param tableNum
+	 * 	테이블 자리
+	 */
+	private void orderInfo(int tableNum) {
+		// TODO Auto-generated method stub
+		final int fTableNum = tableNum;
+		DBHelper dbhp =  new DBHelper(this);
+		SQLiteDatabase db = dbhp.getReadableDatabase();	// 읽기모도로 해주자
+		Cursor cursor = null;
+		// 해당 테이블 정보 가져오기
+		cursor = db.query(DBHelper.ORDER_TABLE, null, "table_num = ?", 
+				new String[]{String.valueOf(fTableNum)}, null, null, null);
+		StringBuilder sb = new StringBuilder();
+		String price;
+		if( cursor.moveToFirst() ){	
+			sb.append("상품명 : "); 
+			sb.append(cursor.getString( cursor.getColumnIndex("product")) + "\n" );
+			sb.append("인원 : "); 
+			sb.append(cursor.getString( cursor.getColumnIndex("person")) + "\n" );			
+			sb.append("가격 : "); 
+			price = formatter.format(cursor.getInt( cursor.getColumnIndex("total_price")));
+			sb.append(price.substring(1, price.length()-3) + "원\n" );
+			sb.append("요구사항 : "); 
+			sb.append(cursor.getString( cursor.getColumnIndex("needs")) + "\n" );			
+		}
+		
+		
+    	// 디비는 꼭 닫아준다.
+		db.close();
+		dbhp.close();
+		AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+		dlg.setTitle("주문 현황").setMessage(sb.toString())
+		.setPositiveButton("체크 아웃", new OnClickListener() {	// 테이블을 비워준다.
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				DBHelper dbhp =  new DBHelper(MainActivity.this);
+				SQLiteDatabase db = dbhp.getWritableDatabase();	// 읽기모도로 해주자
+				ContentValues cv = new ContentValues();
+				cv.put("state", "d");
+				db.update(DBHelper.ORDER_STATE_TABLE, cv,
+						"table_num = ?", new String[]{String.valueOf(fTableNum)});
+		    	// 디비는 꼭 닫아준다.
+				db.close();
+				dbhp.close();
+				Toast.makeText(MainActivity.this, "체크아웃 되었습니다.", Toast.LENGTH_SHORT).show();
+				// 테이블 상태를 다시 로드 한다.
+				loadState();
+			}
+		}).setNegativeButton("취소",null);
+		dlg.create().show();
+
+	}
+
+
+
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		/*

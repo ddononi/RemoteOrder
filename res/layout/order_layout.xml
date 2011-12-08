@@ -1,137 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent"
-  android:minWidth="280dip"
-  android:fadingEdge="none"
-  android:background="@color/normal"
-  >
-	<LinearLayout
-	  android:background="@color/normal"
-	  android:orientation="vertical"
-	  android:layout_width="fill_parent"
-	  android:layout_height="fill_parent">
-		<TextView
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:text="주문 테이블"
-			android:textStyle="bold"
-			android:textSize="16dip"
-			android:background="@color/select"
-			android:textColor="@color/normal"
-			android:paddingLeft="5dp"
-							
-		 />
-		<LinearLayout
-			android:background="#5a9af7"
-		 	android:orientation="vertical"
-			android:layout_width="fill_parent"
-			android:padding="1dp"
-		  	android:layout_height="1dp" /> 		 
-			 
-		<EditText
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/product"
-			android:hint="상품명.."
-			android:textColor="#111111"
-			android:padding="10dp"
-			android:shadowDx="1"
-			android:shadowDy="1"
-			android:shadowRadius="1"
-			android:shadowColor="#ffffff"
-			android:text=""						
-		/>
-		<TextView
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:text="인원"
-			android:textStyle="bold"
-			android:textSize="16dip"
-			android:background="@color/select"
-			android:textColor="@color/normal"
-			android:paddingLeft="5dp"
-							
-		 />
-		<LinearLayout
-			android:background="#5a9af7"
-		 	android:orientation="vertical"
-			android:layout_width="fill_parent"
-			android:padding="1dp"
-		  	android:layout_height="1dp" /> 		 
-			 
-		<EditText
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/person"
-			android:hint="인원.."
-			android:textColor="#111111"
-			android:padding="10dp"
-			android:shadowDx="1"
-			android:shadowDy="1"
-			android:inputType="number"
-			android:maxLength="4"
-			android:shadowRadius="1"
-			android:shadowColor="#ffffff"
-			android:text=""						
-		/>		
-		<TextView
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:text="가격 : "
-			android:textSize="18dip"
-			android:background="@color/select"
-			android:textColor="@color/normal"	
-			android:padding="15dp"
-									
-		 />
-		<TextView
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:text="주문사항"
-			android:textSize="16dip"
-			android:background="@color/select"
-			android:textColor="@color/normal"	
-			android:paddingLeft="5dp"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/normal"
+    android:fadingEdge="none"
+    android:minWidth="280dip" >
 
-		 />
-		<LinearLayout
-			android:background="#5a9af7"
-		 	android:orientation="vertical"
-			android:layout_width="fill_parent"
-			android:padding="dp"
-		  	android:layout_height="1dp" /> 			 
-		<EditText
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/needs"
-			android:lines="5"
-			android:hint="주문사항.."
-			android:gravity="top"
-			android:textColor="#111111"
-			android:padding="10dp"
-			android:shadowDx="1"
-			android:shadowDy="1"
-			android:shadowRadius="1"
-			android:shadowColor="#ffffff"
-			android:text=""				
-		 />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/normal"
+        android:orientation="vertical" >
 
-		<Button
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/add_btn"
-			android:textColor="#111111"
-			android:padding="10dp"
-			android:shadowDx="1"
-			android:shadowDy="1"
-			android:shadowRadius="1"
-			android:shadowColor="#ffffff"
-			android:text="주문하기"	
-			android:onClick="mOnclick"
-	
-		 />		 
-	</LinearLayout>
-	 
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/select"
+            android:paddingLeft="5dp"
+            android:text="주문 테이블"
+            android:id="@+id/title"
+            android:textColor="@color/normal"
+            android:textSize="16dip"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#5a9af7"
+            android:orientation="vertical"
+            android:padding="1dp" />
+
+        <Spinner
+            android:id="@+id/menu_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:padding="5dp"
+	            android:text="가격 : "
+	            android:id="@+id/price"
+	            android:shadowColor="#ffffff"
+	 			android:textColor="#111111"            
+	            android:shadowDx="1"
+	            android:shadowDy="1"
+	            android:shadowRadius="1"            
+	            android:textSize="18dip" />
+	            
+	        <TextView
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:padding="5dp"
+	            android:text=" * 1 명 "
+	            android:id="@+id/label_person"
+	            android:shadowColor="#ffffff"
+	 			android:textColor="#111111"            
+	            android:shadowDx="1"
+	            android:shadowDy="1"
+	            android:shadowRadius="1"            
+	            android:textSize="18dip" />	            
+       </LinearLayout>     
+       <SeekBar android:id="@+id/person"
+       		 android:max="5"
+       		 android:progress="1"
+       		 android:layout_width="fill_parent"
+       		 android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/select"
+            android:paddingLeft="5dp"
+            android:text="상품정보"
+            android:textColor="@color/normal"
+            android:textSize="16dip" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#5a9af7"
+            android:orientation="vertical"
+            android:padding="dp" />
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:shadowColor="#ffffff"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:text=""
+            android:textColor="#111111" />       
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/select"
+            android:paddingLeft="5dp"
+            android:text="주문사항"
+            android:textColor="@color/normal"
+            android:textSize="16dip" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#5a9af7"
+            android:orientation="vertical"
+            android:padding="dp" />
+
+        <EditText
+            android:id="@+id/needs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:hint="주문사항.."
+            android:lines="5"
+            android:padding="10dp"
+            android:shadowColor="#ffffff"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:text=""
+            android:inputType="text"
+            android:textColor="#111111" />
+
+        <Button
+            android:id="@+id/add_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="mOnclick"
+            android:padding="10dp"
+            android:shadowColor="#ffffff"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:text="주문하기"
+            android:textColor="#111111" />
+    </LinearLayout>
+
 </ScrollView>
