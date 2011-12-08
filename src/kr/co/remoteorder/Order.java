@@ -8,6 +8,7 @@ public class Order {
 	private int person; 		 // 인원
 	private int price;			 //	총 가격
 	private int tableNum; 		 // 테이블 인원
+	private String date;		// 주문날짜
 
 	public String getProducts() {
 		return products;
@@ -39,6 +40,14 @@ public class Order {
 
 	public void setPrice(int price) {
 		this.price = price;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 }

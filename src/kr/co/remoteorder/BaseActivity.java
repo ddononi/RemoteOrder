@@ -19,6 +19,7 @@ public class BaseActivity extends Activity {
     public static final String SERVER_URL = "http://ddononi.cafe24.com/remoteOrder/";	
     public static final String ORDER_URL = SERVER_URL + "order.php";					
     public static final String REGISTER_URL = SERVER_URL + "register.php";	
+    public static final String ORDERED_URL = SERVER_URL + "ordered.php";
     public static final String MENU_URL = SERVER_URL + "_menu.php";	
 	public static final String CLEAN_URL = SERVER_URL + "clean.php";	
 	

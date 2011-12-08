@@ -20,11 +20,12 @@
 		    android:orientation="vertical"
 		    android:background="#C81300"
 		    android:padding="1dp"
-		    android:layout_height="1dp" />	        
+		    android:layout_height="2dp" />	        
         </LinearLayout>
 
         <TableLayout
             android:layout_weight="1"
+		    android:layout_marginTop="10dp"            
             android:id="@+id/tableLayout1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -205,7 +206,7 @@
             </TableRow>            
         </TableLayout>
 <TextView
-    android:text="주문현황"
+    android:text="여기에 만들사람 이름들을 넣으세요"
     android:textSize="10dp"
     android:gravity="center_horizontal|center"
     android:layout_width="match_parent"

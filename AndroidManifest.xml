@@ -22,7 +22,7 @@
         </activity>
         <activity android:name="OrderActivity" android:windowSoftInputMode="stateHidden" ></activity>
         <activity android:name="RegisterActivity"  android:windowSoftInputMode="stateHidden" ></activity>
-        <activity android:name="OrderInfoActivity"></activity>
+        <activity android:name="OrderLogActivity"></activity>
         <activity android:name="MainActivity"></activity>
     </application>
 

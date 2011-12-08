@@ -29,9 +29,7 @@ import android.content.Intent;
 import android.content.res.XmlResourceParser;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.text.Editable;
 import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -51,6 +49,7 @@ import android.widget.Toast;
 public class OrderActivity extends BaseActivity {
 	private ArrayList<String> menus = new ArrayList<String>();
 	private int[] prices = new int[100];					// 메뉴 가격들
+	private String[] product = new String[100];					// 메뉴 가격들
 	private String[] info = new String[100];					// 메뉴 정보
 	private int tableNum;					//  테이블 번호
 	private String menuXml;					// 메뉴 xml 문자열
@@ -107,7 +106,7 @@ public class OrderActivity extends BaseActivity {
 					int position, long arg3) {
 				// TODO Auto-generated method stub
 				// 선택된 메뉴이름 저장
-				selectedMenu = menuAdapter.getItem(position);
+				selectedMenu = product[position];
 				selectedNum = position;	// 선택된 번호저장
 				// 가격 * 수량
 				int p = personSB.getProgress();
@@ -213,6 +212,7 @@ public class OrderActivity extends BaseActivity {
 						parser.next();	// text으로 이동
 						name = parser.getText();			// 상품명 넣기  		
 						Log.i(DEBUG_TAG, parser.getText());
+						product[i] = name;
 					}else if(strName.equals("price")){		
 						parser.next();	// text으로 이동
 						prices[i] = Integer.valueOf(parser.getText());			// 가격저장 	
