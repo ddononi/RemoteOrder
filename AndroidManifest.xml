@@ -4,8 +4,13 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="10" />
+    <uses-sdk android:minSdkVersion="8" />
+    <!-- 서버에서 데이터를 수신하기 위한 권한 -->
     <uses-permission android:name="android.permission.INTERNET"/>
+		<!--  블루투스장치검색을 위한 권한 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+        <!--  블루투스 송수신을 위한 권한 -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -23,7 +28,8 @@
         <activity android:name="OrderActivity" android:windowSoftInputMode="stateHidden" ></activity>
         <activity android:name="RegisterActivity"  android:windowSoftInputMode="stateHidden" ></activity>
         <activity android:name="OrderLogActivity"></activity>
-        <activity android:name="MainActivity"></activity>
+        <activity android:name="MainActivity" android:screenOrientation="portrait" ></activity>
+        <activity android:name="SearchBluetoothDeviceActivity"></activity>
     </application>
 
 

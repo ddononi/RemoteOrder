@@ -206,7 +206,7 @@
             </TableRow>            
         </TableLayout>
 <TextView
-    android:text="여기에 만들사람 이름들을 넣으세요"
+    android:text="익규  n 지호"
     android:textSize="10dp"
     android:gravity="center_horizontal|center"
     android:layout_width="match_parent"

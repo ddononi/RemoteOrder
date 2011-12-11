@@ -1,14 +1,14 @@
 package kr.co.remoteorder;
 
+import java.util.UUID;
+
 import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
-import android.os.CountDownTimer;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 /**
  *	기본 설정 base Class
@@ -37,35 +37,19 @@ public class BaseActivity extends Activity {
 	// 메뉴를 저장할 xml 파일명
 	public static final String MENU_XML_FILE_NAME = "_menu.xml";
 	
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-    	super.onCreateOptionsMenu(menu);
-    	menu.add(0,1,0, "주문내역");//.setIcon(android.R.drawable.ic_menu_search);  
-    	menu.add(0,2,0, "상품등록");//.setIcon(android.R.drawable.ic_menu_gallery); 
-    	//item.setIcon();
-    	return true;
-    }
-    
-    /**
-     * 옵션 메뉴 선택에 따라 해당 처리를 해줌
-     */
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-    	Intent intent = null;
-    	switch(item.getItemId()){
-
-			case 1:
-				intent = new Intent(getBaseContext(), OrderLogActivity.class);
-				startActivity(intent);
-				return true;
-    		case 2:
-				intent = new Intent(getBaseContext(), RegisterActivity.class);
-				startActivity(intent);
-    			return true;
-    	}
-    	return false;
-    }	
+	// 액티비티 요청값
+	public static final int REQUEST_ENABLE = 0;
+	public static final int SEARCH_DEVICE = 1;	
+	public static final int ORDER_STATE = 2;
 	
+	// 핸들러 메시지 값
+	public static final int CHANGE_STATE = 0;
+	public static final int SHOW_TOAST = 1;	
+	// uuid 설정
+	// RFCOMM Channel 통신을 위한 블루투스 표준 uuid값
+	public static final UUID BT_UUID =
+			UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+
 	/**
 	 * 로딩중에 화면을 회전하면 에러가 발생하기 때문에
 	 * 완료가 될때까지 화면을 잠근다.

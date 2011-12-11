@@ -219,12 +219,18 @@ public class OrderActivity extends BaseActivity {
 						price = formatter.format(prices[i]);
 						name += "  " + price.substring(1, price.length()-3) + "원";
 						menus.add(name);
+						name = "";
+						price = "";
 						Log.i(DEBUG_TAG, parser.getText());						
 					}else  if(strName.equals("info")){		
 						parser.next();	// text으로 이동
 						info[i] = parser.getText();	// 상품정보
 						i++;
 					}
+				// 마지막 products 태크면 끝낸다.
+				}else if( (XmlResourceParser.END_TAG == eventType)
+						&& parser.getName().equals("products") ){				
+						break;
 				}
 				eventType = parser.next();	// 다음이벤트로..
 			}
@@ -247,6 +253,7 @@ public class OrderActivity extends BaseActivity {
 		final String person = ((SeekBar)findViewById(R.id.person)).getProgress() + "";
 		// 주문사항 가져오기
 		final String needs = ((EditText)findViewById(R.id.needs)).getText().toString();
+		needs.replace(":", "");	//메인액티비티에서 :값은 split로 쓰기 위해
 		// 인원 입력체크
 		if(!TextUtils.isDigitsOnly(person)){
 			Toast.makeText(this, "인원을 정확히 입력하세요", Toast.LENGTH_SHORT).show();
@@ -260,6 +267,7 @@ public class OrderActivity extends BaseActivity {
 		progressDialog.setMessage("서버에 전송중...");		
 		progressDialog.show();
 
+		final Intent intent = new Intent();
 		// 쓰레드로 처리
 		new Thread(new Runnable() {
 			@Override
@@ -291,7 +299,7 @@ public class OrderActivity extends BaseActivity {
 						changeState(Integer.valueOf(person), tableNum,
 								totalPrice, needs );
 						// 정상처리결과 메세지를 설정
-						setResult(RESULT_OK);
+						//setResult(RESULT_OK);
 						Log.i(DEBUG_TAG, responseBody);
 						OrderActivity.this.runOnUiThread(new Runnable() {
 							@Override
@@ -301,6 +309,13 @@ public class OrderActivity extends BaseActivity {
 										"정상주문처리되었습니다.", Toast.LENGTH_SHORT).show();
 							}
 						});
+						// 인텐트에 주문정보를 넣어준다.
+						intent.putExtra("tableNum", tableNum);
+						intent.putExtra("person", person);
+						intent.putExtra("product", selectedMenu);
+						intent.putExtra("price", String.valueOf(totalPrice));
+						intent.putExtra("needs", needs);
+						setResult(RESULT_OK, intent);
 					}else{
 						Toast.makeText(OrderActivity.this,
 								"주문 실패 서버상태를 체크하세요.", Toast.LENGTH_SHORT).show();							

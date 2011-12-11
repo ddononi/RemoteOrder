@@ -96,8 +96,10 @@ public class InitActivity extends BaseActivity{
 					// 한글 깨짐 방지를 위해 decoding 해서 가져오자
 					menuXml = URLDecoder.decode(responseBody);
 					// 파일로 저장
-					doWriteFile(menuXml);
-					Log.i(DEBUG_TAG, menuXml);
+					synchronized(this) {
+						doWriteFile(menuXml);
+					}
+					Log.i(DEBUG_TAG, "xml 값 :\n" + menuXml);
 					result = true;
 				}
 			} catch (ClientProtocolException e) {

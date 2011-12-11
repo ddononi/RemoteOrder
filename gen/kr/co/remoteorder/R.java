@@ -71,6 +71,7 @@ public final class R {
         public static final int order_layout=0x7f030005;
         public static final int ordered_list=0x7f030006;
         public static final int register_layout=0x7f030007;
+        public static final int search_bluetooth=0x7f030008;
     }
     public static final class string {
         public static final int app_name=0x7f050001;

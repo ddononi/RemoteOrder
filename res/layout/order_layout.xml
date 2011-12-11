@@ -90,7 +90,7 @@
         <TextView
             android:id="@+id/info"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100px"
             android:padding="10dp"
             android:shadowColor="#ffffff"
             android:shadowDx="1"
@@ -117,19 +117,18 @@
 
         <EditText
             android:id="@+id/needs"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="top"
-            android:hint="주문사항.."
-            android:lines="5"
-            android:padding="10dp"
-            android:shadowColor="#ffffff"
-            android:shadowDx="1"
-            android:shadowDy="1"
-            android:shadowRadius="1"
-            android:text=""
-            android:inputType="text"
-            android:textColor="#111111" />
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:lines="5"
+			android:hint="주문 사항.."
+			android:gravity="top"
+			android:textColor="#111111"
+			android:padding="10dp"
+			android:shadowDx="1"
+			android:shadowDy="1"
+			android:shadowRadius="1"
+			android:shadowColor="#ffffff"
+			android:text=""	 />
 
         <Button
             android:id="@+id/add_btn"
