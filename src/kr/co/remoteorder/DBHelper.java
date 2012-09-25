@@ -23,46 +23,12 @@ public class DBHelper extends SQLiteOpenHelper {
 				     " state TEXT NOT NULL, person INTEGER);";
 		db.execSQL(sql);
 		
-		// 9개의 테이블 정보를 기본 설정 해준다. state: a =  activate, d = deactivate
-		sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
-					" values (1, 'd', 0 )";
-		db.execSQL(sql);
-		sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
-					" values (2, 'd', 0 )";
-		db.execSQL(sql);
-		sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
-					" values (3, 'd', 0 )";
-		db.execSQL(sql);
-		sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
-					" values (4, 'd', 0 )";
-		db.execSQL(sql);
-		sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
-					" values (5, 'd', 0 )";
-		db.execSQL(sql);
-		sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
-					" values (6, 'd', 0 )";
-		db.execSQL(sql);
-		sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
-					" values (7, 'd', 0 )";
-		db.execSQL(sql);
-		sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
-					" values (8, 'd', 0 )";	
-		db.execSQL(sql);
-		sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
-				" values (9, 'd', 0 )";		
-		db.execSQL(sql);
-		
-		sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
-				" values (10, 'd', 0 )";		
-		db.execSQL(sql);
-		
-		sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
-				" values (11, 'd', 0 )";		
-		db.execSQL(sql);
-		
-		sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
-				" values (12, 'd', 0 )";		
-		db.execSQL(sql);		
+		for(int i=1; i <=12; i++){
+			sql = "insert into " + ORDER_STATE_TABLE + " (table_num, state, person) " +
+					" values ("+ i +", 'd', 0 )";	
+			db.execSQL(sql);	
+		}		
+
 		
 		//	주문내역 테이블
 		sql = "CREATE TABLE "+ ORDER_TABLE + " (table_num INTEGER, " +

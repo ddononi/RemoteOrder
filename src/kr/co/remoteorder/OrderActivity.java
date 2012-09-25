@@ -211,7 +211,7 @@ public class OrderActivity extends BaseActivity {
 					if(strName.equals("name")){				// product node로 일때
 						parser.next();	// text으로 이동
 						name = parser.getText();			// 상품명 넣기  		
-						Log.i(DEBUG_TAG, parser.getText());
+						//Log.i(DEBUG_TAG, parser.getText());
 						product[i] = name;
 					}else if(strName.equals("price")){		
 						parser.next();	// text으로 이동
@@ -221,7 +221,7 @@ public class OrderActivity extends BaseActivity {
 						menus.add(name);
 						name = "";
 						price = "";
-						Log.i(DEBUG_TAG, parser.getText());						
+						//Log.i(DEBUG_TAG, parser.getText());						
 					}else  if(strName.equals("info")){		
 						parser.next();	// text으로 이동
 						info[i] = parser.getText();	// 상품정보

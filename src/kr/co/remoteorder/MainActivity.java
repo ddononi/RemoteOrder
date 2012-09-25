@@ -472,7 +472,7 @@ public class MainActivity extends BaseActivity {
 		dbhp.close();
 		AlertDialog.Builder dlg = new AlertDialog.Builder(this);
 		dlg.setTitle("주문 현황").setMessage(sb.toString())
-		.setPositiveButton("체크 아웃", new OnClickListener() {	// 테이블을 비워준다.
+		.setPositiveButton("체크 인", new OnClickListener() {	// 테이블을 비워준다.
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
@@ -502,7 +502,7 @@ public class MainActivity extends BaseActivity {
 						});
 						db.close();
 						dbhp.close();
-						showToast("체크아웃 되었습니다.");
+						showToast("체크인 되었습니다.");
 					}
 				}).start();
 				// 테이블 상태를 다시 로드 한다.
