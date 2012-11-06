@@ -1,215 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:background="@drawable/bg"
-    android:layout_height="match_parent" >
+    android:orientation="vertical" >
 
-	<LinearLayout
-	    android:layout_width="match_parent"
-	    android:orientation="vertical"
-	    android:background="#ffffff"
-	    android:gravity="center_horizontal|center"
-	    android:layout_height="wrap_content" >
-	    <ImageView
-	        android:background="@drawable/title"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content" />
-		<LinearLayout
-		    android:layout_width="match_parent"
-		    android:orientation="vertical"
-		    android:background="#C81300"
-		    android:padding="1dp"
-		    android:layout_height="2dp" />	        
-        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:gravity="center_horizontal|center"
+        android:orientation="vertical" >
 
-        <TableLayout
-            android:layout_weight="1"
-		    android:layout_marginTop="10dp"            
-            android:id="@+id/tableLayout1"
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/title" />
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:stretchColumns="0,1,2" >
+            android:layout_height="2dp"
+            android:background="#C81300"
+            android:orientation="vertical"
+            android:padding="1dp" />
+    </LinearLayout>
 
-            <TableRow
-                android:id="@+id/tableRow1"
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:stretchColumns="0,1,2" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/table1"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1" >
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:onClick="mOnclick"
+                android:padding="5dp"
+                android:text="테이블1"
+                android:textSize="10dp" />
 
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:padding="5dp"
-                    android:layout_margin="1dp"
-                    android:id="@+id/table1"
-                    android:textSize="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/selector"
-                    android:onClick="mOnclick"
-                    android:text="테이블1" />
-
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_span="1"
-                    android:padding="5dp"
-                    android:id="@+id/table2"
-                    android:layout_margin="1dp"
-                    android:textSize="10dp"
-                    android:layout_weight="1"
-                     android:background="@drawable/selector"
-                    android:onClick="mOnclick"
-                    android:text="테이블2" />
-
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:padding="5dp"
-                    android:layout_margin="1dp"
-                    android:id="@+id/table3"
-                    android:textSize="10dp"
-                    android:layout_weight="1"
-                     android:background="@drawable/selector"
-                    android:onClick="mOnclick"
-                    android:text="테이블3" />
-            </TableRow>
-
-            <TableRow
-                
-                android:id="@+id/tableRow1"
+            <Button
+                android:id="@+id/table2"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1" >
+                android:layout_margin="1dp"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:onClick="mOnclick"
+                android:padding="5dp"
+                android:text="테이블2"
+                android:textSize="10dp" />
 
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:onClick="mOnclick"
-                      android:background="@drawable/selector"
-                    android:padding="5dp"
-                    android:textSize="10dp"
-                    android:id="@+id/table4"
-                    android:layout_weight="1"
-                    android:layout_margin="1dp"
-                    android:text="테이블4" />
-
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:onClick="mOnclick"
-                     android:background="@drawable/selector"
-                    android:padding="5dp"
-                    android:textSize="10dp"
-                    android:id="@+id/table5"
-                    android:layout_weight="1"
-                    android:layout_margin="1dp"
-                    android:text="테이블5" />
-
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:padding="5dp"
-                    android:onClick="mOnclick"
-                    android:layout_margin="1dp"
-                    android:textSize="10dp"
-                    android:id="@+id/table6"
-                    android:layout_weight="1"
-                     android:background="@drawable/selector"
-                    android:text="테이블6" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow1"
+            <Button
+                android:id="@+id/table3"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1" >
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:onClick="mOnclick"
+                android:padding="5dp"
+                android:text="테이블3"
+                android:textSize="10dp" />
+        </TableRow>
 
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:onClick="mOnclick"
-                    android:padding="5dp"
-                    android:layout_margin="1dp"
-                    android:id="@+id/table7"
-                     android:textSize="10dp"
-                     android:layout_weight="1"
-                     android:background="@drawable/selector"
-                    android:text="테이블7" />
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
 
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:onClick="mOnclick"
-                    android:padding="5dp"
-                    android:id="@+id/table8"
-                    android:layout_margin="1dp"
-                     android:textSize="10dp"
-                     android:layout_weight="1"
-                    android:background="@drawable/selector"
-                    android:text="테이블8" />
-
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:padding="5dp"
-                    android:layout_margin="1dp"
-                    android:id="@+id/table9"
-                     android:textSize="10dp"
-                     android:layout_weight="1"
-                    android:background="@drawable/selector"
-                    android:onClick="mOnclick"
-                    android:text="테이블9" />
-            </TableRow>
-            
-            <TableRow
-                android:id="@+id/tableRow1"
+            <Button
+                android:id="@+id/table4"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1" >
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:onClick="mOnclick"
+                android:padding="5dp"
+                android:text="테이블4"
+                android:textSize="10dp" />
 
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:onClick="mOnclick"
-                    android:padding="5dp"
-                    android:layout_margin="1dp"
-                    android:id="@+id/table10"
-                     android:textSize="10dp"
-                     android:layout_weight="1"
-                     android:background="@drawable/selector"
-                    android:text="테이블7" />
+            <Button
+                android:id="@+id/table5"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:onClick="mOnclick"
+                android:padding="5dp"
+                android:text="테이블5"
+                android:textSize="10dp" />
 
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:onClick="mOnclick"
-                    android:padding="5dp"
-                    android:id="@+id/table11"
-                    android:layout_margin="1dp"
-                     android:textSize="10dp"
-                     android:layout_weight="1"
-                    android:background="@drawable/selector"
-                    android:text="테이블8" />
+            <Button
+                android:id="@+id/table6"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:onClick="mOnclick"
+                android:padding="5dp"
+                android:text="테이블6"
+                android:textSize="10dp" />
+        </TableRow>
 
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:padding="5dp"
-                    android:layout_margin="1dp"
-                    android:id="@+id/table12"
-                    android:textSize="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/selector"
-                    android:onClick="mOnclick"
-                    android:text="테이블9" />
-            </TableRow>            
-        </TableLayout>
-<TextView
-    android:text="익규  n 지호"
-    android:textSize="10dp"
-    android:gravity="center_horizontal|center"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/table7"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:onClick="mOnclick"
+                android:padding="5dp"
+                android:text="테이블7"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/table8"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:onClick="mOnclick"
+                android:padding="5dp"
+                android:text="테이블8"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/table9"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:onClick="mOnclick"
+                android:padding="5dp"
+                android:text="테이블9"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/table10"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:onClick="mOnclick"
+                android:padding="5dp"
+                android:text="테이블7"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/table11"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:onClick="mOnclick"
+                android:padding="5dp"
+                android:text="테이블8"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/table12"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:onClick="mOnclick"
+                android:padding="5dp"
+                android:text="테이블9"
+                android:textSize="10dp" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center"
+        android:text=""
+        android:textSize="10dp" />
 
 </LinearLayout>
